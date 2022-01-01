@@ -1,0 +1,120 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.App{
+  background: #005DC7;
+  background-image: url('../public/images/Path\ 1.png');
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 50% 100%
+}
+.hero{
+  width: 95vw;
+  height: 100vh;
+  color: #fff;
+  position: relative;
+}
+.container{
+  max-width: 1000px;
+  width: 100%;
+  margin: 0px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  
+}
+.heroText{
+  width: 200px;
+}
+.heroText h1{
+  font-weight: normal;
+  font-size: 3em;
+}
+.heroText p{
+  text-align: justify;
+}
+.heroImage>img{
+  width: 450px;
+  transition: ease-out .5s;
+}
+.heroBtns{
+  display: flex;
+  flex-direction: column;
+}
+.heroBtns{
+  position: absolute;
+  top: 100px;
+  right: 20px;
+}
+.heroBtns .btn{
+  width: 30px;
+  height: 30px;
+  border-radius: 2px;
+  margin: 10px 0px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
+  transition: ease-out .5s;
+}
+.btnActive{
+  background: #005DC7;
+}
+.cards{
+  display: flex;
+  position: absolute;
+  bottom: 100px;
+  left: 400px;
+}
+.card{
+  width: 180px;
+  height: 100px;
+  margin-left: 150px;
+  border-radius: 28px;
+  padding: 0px 15px;
+  display: flex;
+  justify-content: flex-end;
+  background: white;
+  color: rgb(80, 80, 80);
+  position: relative;
+}
+.card:nth-child(1){
+  margin-left: 0;
+}
+.card::after{
+  content: "";
+  width: 100%;
+  height: 50%;
+  background: rgb(6, 184, 139);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 0;
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit;
+}
+.card img{
+  width: 200px;
+  position: absolute;
+  left: -100px;
+  z-index: 8;
+}
+.card .cardText{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 8;
+}
+.card .cardText> h4, .card .cardText>p{
+margin: 2px 0px;
+}
