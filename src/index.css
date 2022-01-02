@@ -118,3 +118,13 @@ code {
 .card .cardText> h4, .card .cardText>p{
 margin: 2px 0px;
 }
+.cart{
+  width: 200px;
+  min-height: 100px;
+  background: #fff;
+  color: rgb(58, 58, 58);
+  position: absolute;
+  left: -200px;
+  transition: ease-out .3s;
+
+}

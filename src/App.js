@@ -1,8 +1,9 @@
 import {useState} from 'react'
 import Cards from './components/Cards';
+import Cart from './components/Cart';
 
 function App() {
-const [mainProduct, setMainProduct] = useState([
+const [products, setProducts] = useState([
 {
   id: 1,
   title: "Pink Unisex",
@@ -29,64 +30,73 @@ const [mainProduct, setMainProduct] = useState([
 },
 {
   id: 4,
-  title: "Pink Unisex Nike",
+  title: "Pink",
   dec: 'Lorem dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud',
   img: './images/heroShoe1.png',
   price: 559,
   inCart: false,
 },
-])
-const [cardProduct, setCardProduct] = useState([
 {
-  id: 1,
-  title: "Pink Unisex Nike",
+  id: 5,
+  title: "Pink",
+  dec: 'Lorem dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud',
   img: './images/p1.png',
   price: 499,
   inCart: false,
 },
 {
-  id: 2,
+  id: 6,
   title: "p2",
+  dec: 'Lorem dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud',
   img: './images/p2.png',
   price: 499,
   inCart: false,
 },
 {
-  id: 3,
+  id: 7,
   title: "Nike",
+  dec: 'Lorem dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud',
   img: './images/p3.png',
   price: 909,
   inCart: false,
 }
 ])
 
-const [dp, setDp] = useState(1)
+const [dp, setDp] = useState(4)
+const [showCart, setShowCart] = useState(false)
+const [ cart, setCart]= useState([])
 
+const addToCart= ()=>{
+
+}
   return (
     <div className="App">
       <div className="hero">
-        <div className="cart">
-          <img src="" alt="" />
-        </div>
+        <nav>
+          <button  onClick={()=>setShowCart(!showCart)}>{showCart?"x":"cart"}</button>
+          <Cart showCart={showCart} products={products}/>
+        
+        </nav>
+        
        
       <div className="container">
         <div className="heroText">
-          <h1>{mainProduct[dp].title}</h1>
+          <h1>{products[dp].title}</h1>
           <p>
-          {mainProduct[dp].dec}{" "}
+          {products[dp].dec}{" "}
           </p>
-          <h1>${mainProduct[dp].price}</h1>
+          <h1>${products[dp].price}</h1>
         </div>
         <div className="heroImage">
-          <img src={mainProduct[dp].img} alt={mainProduct[dp].title} />
+          <img src={products[dp].img} alt={products[dp].title} />
         </div>        
       </div>
       <div className="heroBtns">
-          <button className={` btn ${dp===0?"btnActive":" "}`} onClick={()=>setDp(0)}></button>
-          <button className={` btn ${dp===1?"btnActive":" "}`} onClick={()=>setDp(1)}></button>
-          <button className={` btn ${dp===2?"btnActive":" "}`} onClick={()=>setDp(2)}></button>
+          <button className={` btn ${dp===4?"btnActive":" "}`} onClick={()=>setDp(4)}></button>
+          <button className={` btn ${dp===5?"btnActive":" "}`} onClick={()=>setDp(5)}></button>
+          <button className={` btn ${dp===6?"btnActive":" "}`} onClick={()=>setDp(6)}></button>
         </div>
-      <Cards cardProduct={cardProduct}/>
+      <Cards cardProduct={products}/>
       </div>
     </div>
   );
